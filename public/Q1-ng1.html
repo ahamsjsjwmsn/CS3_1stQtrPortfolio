@@ -1,8 +1,13 @@
 <script>
-    let age = console.prompt("How old are you?");
-    let maxAge = console.prompt("What is the max age you expect to live until?");
-    let numPerDay = console.prompt("How many movies do you plan on watching per day?");
+    let age = window.prompt("How old are you?");
+    let maxAge = window.prompt("What is the max age you expect to live until?");
+    let numPerDay = window.prompt("How many movies do you plan on watching per day?");
     let totalRequired = (numPerDay * 365) * (maxAge - age);
-    console.confirm (`you're ${age} years old, you will live until ${maxAge} years old, and you plan on watching ${numPerDay} movies per day?`)
-    document.write("You will watch " + totalRequired + " more movies in your lifetime.");
+    let sure = window.confirm (`you're ${age} years old, you will live until ${maxAge} years old, and you plan on watching ${numPerDay} movies per day?`)
+    if(sure){
+        console.log("You will watch " + totalRequired + " more movies in your lifetime.");
+    }
+    else{
+        console.log("Run one more time!!");
+    } 
 </script>
