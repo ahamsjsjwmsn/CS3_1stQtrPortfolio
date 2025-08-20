@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 2nd Graded Exercise submitted by Enzo Lustre of 9 Rubidium</h2>
+<div> How much is the meal?
+    <br />
+    <input id="inp_MealPrice">
+<div> How much will you tip?
+    <br />
+    <input id="inp_tip">
+<div> How much is the service charge?
+    <br />
+    <input id="inp_ServiceCharge">
+</div>
+    <button id="btn_Accept">Accept Input</button>
+    <p id="result">Total Cost: </p>
+
+    <script type="text/javascript">
+        const btn = document.getElementById("btn_Accept")
+        btn.addEventListener('click', totalMeal)
+        function totalMeal(){
+            let mp = Number(document.getElementById("inp_MealPrice").value);
+            let tip = Number(document.getElementById("inp_tip").value);
+            let sc = Number(document.getElementById("inp_ServiceCharge").value);
+            let totalCost = mp + tip + ((sc/100) * mp);
+            let TwoDecimal = totalCost.toFixed(2);
+            document.getElementById("result").textContent = "Total Meal: " + TwoDecimal;
+            console.log(TwoDecimal);
+        }
+    </script>
+</body>
+</html>
