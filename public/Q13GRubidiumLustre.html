@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 3rd Graded Exercise submitted by Enzo Lustre of 9 Rubidium</h2>
+
+    <div> Guess the number: **** </div>
+    <div> The number is from 1 to 100. </div>
+    <div> 
+        Enter your guess: <br />
+        <input id="inp_numberguess">
+        <button id="btn_CheckIt">Check It</button>
+    </div>
+
+    <p id="result">Result: </p>
+
+    <script>
+
+        var dNumber = Math.floor(Math.random() * 100) + 1;  
+        document.getElementById("btn_CheckIt").addEventListener("click", checkIt);
+
+        function checkIt(){
+            let numberguess = Number(document.getElementById("inp_numberguess").value);
+            if (numberguess < dNumber) {
+                document.getElementById("result").textContent = "Result: Higher";
+            } else if (numberguess > dNumber) {
+                document.getElementById("result").textContent = "Result: Lower";
+            } else {
+                document.getElementById("result").textContent = "Result: You are correct!";
+            }
+        }
+    </script>
+</body>
+</html>
